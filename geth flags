@@ -1,0 +1,21 @@
+
+geth node flags
+
+--nodiscover
+--maxpeers 0
+--rpc  (means 'remote procedure call)
+--rpcapi "db,eth,net,web3"  (enables APIs available over RPC/IPC (inter-process communication is common client-server relationship) )
+--rpcport "8080"
+--rpccorsdomain "*"
+This dictates what URLs can connect to your node in order to perform RPC client tasks. Be very careful with this and when possible, put a specific URL rather than the wildcard (*) which allows any URL to connect to your RPC instance.
+
+
+--datadir "/home/HudsonChain1"
+--port "30303"   (network listening port)
+--nat "any"   (network address translation
+--identity "HudsonMainNode" This will set up an identity for your node so it can be identified more easily in a list of peers.
+
+
+You will need to start your geth instance with your custom chain command every time you want to access your custom chain. If you just type "geth" in your console, it will not remember all of the flags you have set.
+
+Example:  geth --identity "MyNodeName" --genesis CustomGenesis.json --rpc --rpcport "8000" --rpccorsdomain "*" --datadir "C:\chains\VPSChain" --port "30303" --nodiscover --ipcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "db,eth,net,web3" --autodag --networkid 1900 --nat "any" console

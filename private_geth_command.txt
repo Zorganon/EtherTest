@@ -1,0 +1,1 @@
+geth --identity "Fronk" --genesis CustomGenesis.json --rpc --rpcport "8080" --rpccorsdomain "*" --datadir ".\chain" --port "30303" --nodiscover --ipcapi "db,eth,net,web3" --rpcapi "db,eth,net,web3" --autodag --networkid 1900 --nat "any" console
